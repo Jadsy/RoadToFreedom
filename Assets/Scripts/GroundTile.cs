@@ -25,7 +25,7 @@ public class GroundTile : MonoBehaviour
     }
 
     public GameObject obstaclePrefab;
-    void spawnObstacles(){
+    public void spawnObstacles(){
         //pick a random point to have an obstacle spawn at it;
 
         int obstacleIndex = Random.Range(2,5);
@@ -34,7 +34,7 @@ public class GroundTile : MonoBehaviour
     }
 
     public GameObject coinPrefab;
-    void spawnCoins(){
+    public void spawnCoins(){
         int coinsToSpawn = 10;
         for(int i = 0; i < coinsToSpawn; i++){
             GameObject temp = Instantiate(coinPrefab, transform);

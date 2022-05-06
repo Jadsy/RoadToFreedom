@@ -7,10 +7,14 @@ public class GameManager : MonoBehaviour
     public int score;
     public static GameManager inst;
     public Text scoreText;
+    public PlayerMovement playerMovement;
 
     public void IncrementScore(){
         score++;
         scoreText.text = "Score: " + score.ToString();
+        playerMovement.speed += playerMovement.acceleration;
+
+
     }
     private void Awake(){
         inst = this;

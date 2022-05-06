@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float acceleration = 0.05f;
     bool alive = true;
     public float speed = 5f;
     public float horizontalMultiplier = 1.3f;
