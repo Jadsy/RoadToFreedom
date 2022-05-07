@@ -9,8 +9,6 @@ public class GroundTile : MonoBehaviour
     void Start()
     {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
-        spawnObstacles();
-        spawnCoins();
     }
 
     // Update is called once per frame
@@ -20,17 +18,29 @@ public class GroundTile : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other){
-        groundSpawner.SpawnTile();
+        groundSpawner.SpawnTile(true);
         Destroy(gameObject, 2);
     }
 
-    public GameObject obstaclePrefab;
+    public GameObject obstaclePrefab2;
+    public GameObject obstaclePrefab3;
+    public GameObject obstaclePrefab4;
     public void spawnObstacles(){
         //pick a random point to have an obstacle spawn at it;
 
         int obstacleIndex = Random.Range(2,5);
+        int obst = Random.Range(2,5);
         Transform spawnPoint = transform.GetChild(obstacleIndex).transform;
-        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        if(obst == 2){
+            Instantiate(obstaclePrefab2, spawnPoint.position, Quaternion.identity, transform);
+            return;
+        } else if(obst == 3){
+            Instantiate(obstaclePrefab3, spawnPoint.position, Quaternion.identity, transform);
+            return;
+        } else if(obst ==4){
+            Instantiate(obstaclePrefab4, spawnPoint.position, Quaternion.identity, transform);
+            return;
+        }
     }
 
     public GameObject coinPrefab;
