@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
     public Text scoreText;
     public PlayerMovement playerMovement;
+    public PoliceMovement policemovement;
 
     public void IncrementScore(){
         score++;
         scoreText.text = "Score: " + score.ToString();
         playerMovement.speed += playerMovement.acceleration;
+        policemovement.speed += policemovement.acceleration;
 
 
     }

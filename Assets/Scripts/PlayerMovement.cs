@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 booster = new Vector3(0,0,5);
+        Vector3 booster = new Vector3(0,0,7f);
         if (Input.GetKeyDown("space"))
         {
             rb.MovePosition(rb.position + booster );
