@@ -7,11 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool in_danger = false;
     public float boost = 2.0f;
-    public float acceleration = 0.05f;
+    public float acceleration = 3f;
     bool alive = true;
     public float speed = 5f;
     public float horizontalMultiplier = 1.3f;
     public Rigidbody rb;
+    public int gas = 0;
 
     float horizontalInput;
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 booster = new Vector3(0,0,5);
+        Vector3 booster = new Vector3(0,0,7f);
         if (Input.GetKeyDown("space"))
         {
             rb.MovePosition(rb.position + booster );
@@ -52,5 +53,9 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < -10){
             End();
         }
+    }
+
+    public void IncGas(){
+        gas++;
     }
 }

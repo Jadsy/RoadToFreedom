@@ -52,6 +52,15 @@ public class GroundTile : MonoBehaviour
         }
     }
 
+    public GameObject gasPrefab;
+    public void spawnGas(){
+        int gasToSpawn = 2;
+        for(int i=0; i < gasToSpawn; i++){
+        GameObject temp = Instantiate(gasPrefab, transform);
+        temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
+        }
+    }
+
     Vector3 GetRandomPointInCollider(Collider collider){
 
         Vector3 point = new Vector3(

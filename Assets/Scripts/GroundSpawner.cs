@@ -11,10 +11,12 @@ public class GroundSpawner : MonoBehaviour
         GameObject temp = Instantiate(groundTile, nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
         temp.GetComponent<GroundTile>().spawnObstacles();
-        temp.GetComponent<GroundTile>().spawnCoins(); 
+        temp.GetComponent<GroundTile>().spawnCoins();
+        temp.GetComponent<GroundTile>().spawnGas(); 
         if(spawning){
             temp.GetComponent<GroundTile>().spawnObstacles();
             temp.GetComponent<GroundTile>().spawnCoins();
+            temp.GetComponent<GroundTile>().spawnGas();
         }
     }
     // Start is called before the first frame update
