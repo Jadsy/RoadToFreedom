@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool in_danger = false;
     public float boost = 2.0f;
     public float acceleration = 0.05f;
     bool alive = true;
@@ -25,8 +26,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void End(){
-        alive = false;
-        Invoke("restart",2);
+        if(in_danger==true){
+            alive = false;
+            Invoke("restart",2);
+        }else{
+            in_danger = true;
+        }
     }
 
     void restart(){
