@@ -10,9 +10,7 @@ public class GroundSpawner : MonoBehaviour
     {
         GameObject temp = Instantiate(groundTile, nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
-        temp.GetComponent<GroundTile>().spawnObstacles();
-        temp.GetComponent<GroundTile>().spawnCoins();
-        temp.GetComponent<GroundTile>().spawnGas(); 
+
         if(spawning){
             temp.GetComponent<GroundTile>().spawnObstacles();
             temp.GetComponent<GroundTile>().spawnCoins();
@@ -23,7 +21,7 @@ public class GroundSpawner : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < 15; i++){
-            if (i < 5){
+            if (i < 2){
                 SpawnTile(false);
             }else{
                 SpawnTile(true);

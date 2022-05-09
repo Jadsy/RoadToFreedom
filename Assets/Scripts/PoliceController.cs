@@ -19,4 +19,5 @@ public class PoliceController : MonoBehaviour
     {
         policeMesh.SetDestination(playerObject.position); 
     }
+
 }

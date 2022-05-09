@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
         score++;
         scoreText.text = "Score: " + score.ToString();
         playerMovement.speed += playerMovement.acceleration;
-        policemovement.speed += policemovement.acceleration;
 
 
     }
