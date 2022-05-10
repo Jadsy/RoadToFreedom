@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioClip boostSound;
     public bool in_danger = false;
     public float boost = 2.0f;
     public float acceleration = 3f;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void restart(){
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
     }
 
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             rb.MovePosition(rb.position + booster );
+            AudioSource.PlayClipAtPoint(boostSound,transform.position);
         }
         if (transform.position.y < -10){
             End();

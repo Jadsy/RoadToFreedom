@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gas : MonoBehaviour
 {
+    public AudioClip gasSound; 
     PlayerMovement player;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class Gas : MonoBehaviour
             return;
         }
         //make player move faster
+        AudioSource.PlayClipAtPoint(gasSound,transform.position);
         player.speed = player.speed + player.acceleration;
         player.IncGas();
         Destroy(gameObject);

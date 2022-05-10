@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    public AudioClip coinSound; 
     public float turnSpeed = 90f;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,9 @@ public class Coin : MonoBehaviour
             return;
         }
 
+
+
+        AudioSource.PlayClipAtPoint(coinSound,transform.position);
         GameManager.inst.IncrementScore();
         Destroy(gameObject);
     }
