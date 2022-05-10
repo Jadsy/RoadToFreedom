@@ -15,9 +15,9 @@ public class PoliceMovement : MonoBehaviour
     private void FixedUpdate()
     {
         
-        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+        // Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         
-        rb.MovePosition(rb.position + forwardMove);
+        // rb.MovePosition(rb.position + forwardMove);
     }
 
     
