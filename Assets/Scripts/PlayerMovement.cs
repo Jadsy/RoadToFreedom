@@ -15,8 +15,14 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public int gas = 0;
 
+
     float horizontalInput;
-    // Start is called before the first frame update
+
+    private void SelectCarGame(int _index){
+        for (int i = 0;i < transform.childCount; i++){
+            transform.GetChild(i).gameObject.SetActive(i == _index);
+        }
+    }
     private void FixedUpdate()
     {
         if(!alive){
@@ -42,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Start(){
+        SelectCarGame(CarSelection.indexor);
+    }
     // Update is called once per frame
     private void Update()
     {
@@ -60,4 +69,5 @@ public class PlayerMovement : MonoBehaviour
     public void IncGas(){
         gas++;
     }
+ 
 }
