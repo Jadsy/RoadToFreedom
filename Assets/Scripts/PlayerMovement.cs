@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMultiplier = 1.3f;
     public Rigidbody rb;
     public int gas = 0;
-
+    [SerializeField] public float jumpForce = 1000f;
+    [SerializeField] LayerMask groundMask;
 
     float horizontalInput;
 
@@ -61,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + booster );
             AudioSource.PlayClipAtPoint(boostSound,transform.position);
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Jump();
+        }
+
         if (transform.position.y < -10){
             End();
         }
@@ -68,6 +74,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void IncGas(){
         gas++;
+    }
+
+    void Jump(){
+        float height = GetComponent<Collider>().bounds.size.y;
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+        
+
+        rb.AddForce(Vector3.up * jumpForce);
+        
+    
     }
  
 }
