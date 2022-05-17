@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public int gas = 0;
     [SerializeField] public float jumpForce = 1000f;
     [SerializeField] LayerMask groundMask;
-
+    public GameObject policeCar;
     float horizontalInput;
 
     private void SelectCarGame(int _index){
@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
             Invoke("restart",2);
         }else{
             in_danger = true;
+            policeCar.transform.localPosition = new Vector3(0,0,-6f);
         }
     }
 
@@ -66,6 +67,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Brake();
+        }
 
         if (transform.position.y < -10){
             End();
@@ -74,6 +79,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void IncGas(){
         gas++;
+    }
+    public void DecGas(){
+        gas--;
     }
 
     void Jump(){
@@ -86,4 +94,9 @@ public class PlayerMovement : MonoBehaviour
     
     }
  
+
+    void Brake(){
+        speed -= 2f;
+        DecGas();
+    }
 }

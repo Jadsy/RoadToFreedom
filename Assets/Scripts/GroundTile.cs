@@ -35,7 +35,7 @@ public class GroundTile : MonoBehaviour
             Instantiate(obstaclePrefab2, spawnPoint.position, Quaternion.identity, transform);
             return;
         } else if(obst == 3){
-            Instantiate(obstaclePrefab3, spawnPoint.position, Quaternion.identity, transform);
+           Instantiate(obstaclePrefab3, spawnPoint.position, Quaternion.identity, transform);
             return;
         } else if(obst ==4){
             Instantiate(obstaclePrefab4, spawnPoint.position, Quaternion.identity, transform);

@@ -7,9 +7,18 @@ public enum ExecutionState{
     COMPLETED,
     TERMINATED
 };
+
+public enum FSMStateType {
+    NEAR,
+    FAR
+};
+
 public abstract class AbstractFSMState : ScriptableObject
 {
     public ExecutionState ExecutionState {get; protected set;}
+    public FSMStateType StateType {get; protected set;}
+    public bool EnteredState {get; protected set;}
+    protected FiniteStateMachine _fsm;
 
     public virtual void OnEnable(){
         ExecutionState = ExecutionState.NONE;
@@ -24,5 +33,11 @@ public abstract class AbstractFSMState : ScriptableObject
     public virtual bool ExitState(){
         ExecutionState = ExecutionState.COMPLETED;
         return true;
+    }
+
+    public virtual void SetExecutingFSM(FiniteStateMachine fsm){
+        if(fsm != null){
+            _fsm = fsm;
+        }
     }
 }
