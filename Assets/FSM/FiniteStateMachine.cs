@@ -10,8 +10,21 @@ public class FiniteStateMachine : MonoBehaviour
     
     AbstractFSMState _currentState;
 
+
+    [SerializeField]
+    List<AbstractFSMState> _validStates;
+    Dictionary<FSMStateType, AbstractFSMState> _fsmStates;
+    public GameObject policeCar;
     public void Awake(){
         _currentState = null;
+
+
+        _fsmStates = new Dictionary<FSMStateType, AbstractFSMState>();
+
+        foreach(AbstractFSMState state in _validStates){
+            state.SetExecutingFSM(this);
+            _fsmStates.Add(state.StateType, state);
+        }
     }
 
     public void Start(){
@@ -32,8 +45,19 @@ public class FiniteStateMachine : MonoBehaviour
         if(nextState == null){
             return;
         }
+        if(_currentState != null){
+            _currentState.ExitState();
+        }
         _currentState = nextState;
         _currentState.EnterState();
+    }
+
+
+    public void EnterState(FSMStateType type){
+        if(_fsmStates.ContainsKey(type)){
+            AbstractFSMState nextState = _fsmStates[type];
+            EnterState(nextState);
+        }
     }
 
 }

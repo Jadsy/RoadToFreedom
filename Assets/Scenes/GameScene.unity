@@ -272,7 +272,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1191583973}
   m_Father: {fileID: 1367081700}
@@ -322,15 +321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ad550c2cbdaa445a829b1646a6c4c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15555541
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ad550c2cbdaa445a829b1646a6c4c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13800001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ad550c2cbdaa445a829b1646a6c4c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.2011113
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60ad550c2cbdaa445a829b1646a6c4c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -650,6 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingState: {fileID: 11400000, guid: 2e5f526070a52e54e8ea088cf9219928, type: 2}
+  _validStates: []
+  policeCar: {fileID: 0}
 --- !u!114 &312441084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,6 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1425,7 +1425,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 467.0844, y: 196.9592, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1510,7 +1509,6 @@ Transform:
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 1.65, y: 5, z: -1.1600018}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1728,7 +1726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f372df34400cab42ba2a46c0cf02ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingState: {fileID: 11400000, guid: 2e5f526070a52e54e8ea088cf9219928, type: 2}
+  _startingState: {fileID: 11400000, guid: c15998568932274458219797e81074d5, type: 2}
+  _validStates:
+  - {fileID: 11400000, guid: c15998568932274458219797e81074d5, type: 2}
+  - {fileID: 11400000, guid: 2e5f526070a52e54e8ea088cf9219928, type: 2}
+  policeCar: {fileID: 1100871576}
 --- !u!1 &1168339173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1774,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.212643, y: 1.0171754, z: 33.526283}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1805,7 +1806,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 99529559}
   m_RootOrder: 0
@@ -1943,7 +1943,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1367081700}
   - {fileID: 2143265815}
@@ -2162,7 +2161,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2886406, y: 1.0454938, z: 0.92875}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 99529559}
   m_Father: {fileID: 1225387983}
@@ -2251,7 +2249,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2421,6 +2418,11 @@ MonoBehaviour:
   horizontalMultiplier: 2
   rb: {fileID: 1561362906}
   gas: 0
+  jumpForce: 1000
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  policeCar: {fileID: 0}
 --- !u!54 &1561362906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2462,7 +2464,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2511,7 +2512,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.6500001, y: 0.532, z: 5.29}
   m_LocalScale: {x: 0.9, y: 0.5, z: 0.9}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 674455940}
   - {fileID: 1644669574}
@@ -2965,6 +2965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingState: {fileID: 11400000, guid: 2e5f526070a52e54e8ea088cf9219928, type: 2}
+  _validStates: []
+  policeCar: {fileID: 0}
 --- !u!114 &1864198972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,6 +3083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingState: {fileID: 11400000, guid: 2e5f526070a52e54e8ea088cf9219928, type: 2}
+  _validStates: []
+  policeCar: {fileID: 0}
 --- !u!1001 &1967416135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3335,7 +3339,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -3368,7 +3371,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1225387983}
   m_RootOrder: 1

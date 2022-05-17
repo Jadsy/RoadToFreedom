@@ -8,15 +8,38 @@ namespace Assets.FSM.States{
 public class NearState : AbstractFSMState
 {
 
- public override bool EnterState(){
-            base.EnterState();
-            Debug.Log("Entered Near State");
+    [SerializeField]
+    float _noContactDuration = 7f;
 
-            return true;
+    float _totalDuration;
+
+    public override void OnEnable(){
+            base.OnEnable();
+            StateType = FSMStateType.NEAR;
+        }
+
+    public override bool EnterState(){
+            EnteredState = base.EnterState();
+            if(EnteredState){
+                Debug.Log("Entered Near State");
+                _totalDuration = 0f;
+                //_fsm.policeCar.transform.localPosition = new Vector3(0,0,-6f);
+            }
+
+
+
+            return EnteredState;
         }
 
         public override void UpdateState(){
-            Debug.Log("Updating Near state");
+            if(EnteredState){
+                _totalDuration += Time.deltaTime;
+                Debug.Log("Updating Near state: " + _totalDuration);
+                
+                if(_totalDuration >= _noContactDuration){
+                    _fsm.EnterState(FSMStateType.FAR);
+                }
+            }
         }
 
         public override bool ExitState(){
